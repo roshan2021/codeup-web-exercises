@@ -1,5 +1,16 @@
 .fancy-header {
     color: purple;
     text-decoration: underline;
+    text-align: center;
+    }
+
+body {
+    background-color: #ffa07a;
+    background-image: url(../imgs/canadian-dollar.png);
+    font-family: Arial;
+}
+
+ul  {
+    list-style: square;
 }
 
