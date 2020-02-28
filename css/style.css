@@ -1,8 +1,19 @@
+/*
+multi
+line
+comment
+*/
+
 .fancy-header {
-    color: purple;
+    color: purple; /* single line comment*/
     text-decoration: underline;
     text-align: center;
     }
+
+h2 {
+    color: blue;
+    text-decoration: underline;
+}
 
 body {
     background-color: #ffa07a;
@@ -14,3 +25,37 @@ ul  {
     list-style: square;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+table, tr>td {
+    font-size: 30px;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+th, td {
+    text-align: center;
+    font-size: medium;
+}
+
+a {
+    color: blanchedalmond;
+}
+
+a:hover {
+    background-color: gray;
+}
+
+a:link {
+    color:red;
+}
+
+a:visited {
+    color:blueviolet;
+}
+
+a:active {
+    background-color: rosybrown;
+}
