@@ -25,6 +25,39 @@
     var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     console.log(numbers);
 
+    //Exercise 4
+    //Add 1 item to the end of your favorite foods array.
+    favFoods.push('ice cream');
+    console.log('Used push to add an item to the array'), favFoods;
+
+    //Exercise 5
+    //Reverse the favorite foods array array.
+    favFoods.reverse();
+    console.log('Reversed the favorite foods array',favFoods);
+
+    //Exercise 6
+    //Sort the favorite foods array in alphabetical order.
+    favFoods.sort();
+    console.log('sort favorite foods', favFoods);
+
+    //Exercise 7
+    //Sort the favorite foods array in reverse alphabetical order.
+    favFoods.sort().reverse();
+    console.log('sorted favorite foods array in reverse alphabetical order', favFoods);
+
+    //Exercise 8
+    //Create a new array of fruits and add that array to the end of your favorite foods array.
+    var fruits = ['apple', 'lemon', 'orange'];
+    var addmore = favFoods.concat(fruits);
+    console.log('concatenate two arrays', addmore);
+
+    //Do not use push? why?
+    //favFoods.push.apply(favFoods, fruits);
+    //console.log('added fruits array to favorite foods array', favFoods);
+
+
+    //Exercise 9
+    //
 
 </script>
 </body>
