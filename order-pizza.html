@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
           crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/068546a344.js"></script>
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
@@ -27,11 +28,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Menu</a>
                         </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you</button>
+                    </form>
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sign up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <a class="nav-link" href="#"><i class="fas fa-user"></i> Sign Up</a>
                         </li>
                     </ul>
                 </div>
@@ -41,10 +47,10 @@
 
     <main class="container">
         <!--jumbotron div-->
-        <div class="jumbotron jumbotron-fluid d-none d-md-block">
+        <div id="main-jumbo" class="jumbotron jumbotron-fluid d-none d-md-block">
 
-            <div class="container">
-                <h1 class="display-4">Welcome to Pizza World!</h1>
+<!--            <div class="container">-->
+                <h1 id="welcome-title" class="display-4">Welcome to Pizza World!</h1>
             </div>
         </div>
 
@@ -59,9 +65,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">3</span>  Toppings</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
         </ul>
 
