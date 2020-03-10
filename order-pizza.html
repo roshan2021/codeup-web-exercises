@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Order Pizza</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Order Pizza</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
           crossorigin="anonymous">
@@ -14,7 +15,8 @@
         <nav>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">Pizza world</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -34,23 +36,19 @@
                     </ul>
                 </div>
             </nav>
-
-
-
         </nav>
     </header>
 
     <main class="container">
-<!--        jumbotron div-->
+        <!--jumbotron div-->
         <div class="jumbotron jumbotron-fluid d-none d-md-block">
 
             <div class="container">
                 <h1 class="display-4">Welcome to Pizza World!</h1>
-<!--                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>-->
             </div>
         </div>
 
-<!--        h2 build your pizza nav-badges-->
+        <!--h2 build your pizza nav-badges-->
         <h2>Build your own pizza!</h2>
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -67,7 +65,7 @@
             </li>
         </ul>
 
-<!--        first card-->
+        <!--first card-->
         <div class="card text-left">
             <div class="card-header bg-primary text-white">
                 Choose size and crust
@@ -98,26 +96,95 @@
             </div>
         </div>
 
-
-
-<!--    second card-->
+        <!--second card-->
         <div class="card text-left">
             <div class="card-header bg-primary text-white">
                 Choose Cheese and Sauce
             </div>
-
-
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Example select</label>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Cheese</li>
+                    <li class="list-group-item">How much?<label for="exampleFormControlSelect1"></label>
                     <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <option>Light</option>
+                    <option>Normal</option>
+                    <option>Extra</option>
+                    <option>Double</option>
                     </select>
-                </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Sauce</li>
+                    <li class="list-group-item">What type?<label for="exampleFormControlSelect1"></label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Tomato sauce</option>
+                            <option>Marinara sauce</option>
+                            <option>BBQ sauce</option>
+                            <option>Alfredo sauce</option>
+                        </select>
+                    </li>
+                    <li class="list-group-item">How Much?<label for="exampleFormControlSelect1"></label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Light</option>
+                            <option>Normal</option>
+                            <option>Extra</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+
+            <!--footer for second card-->
+            <div class="card-footer text-right text-muted" role="group">
+                <div class="btn-group">
+                <a href="#" class="btn btn-primary"> < Previous Step</a>
+                <a href="#" class="btn btn-primary">Next Step ></a>
+            </div>
+            </div>
         </div>
+
+        <!--third card-->
+        <div class="card text-left">
+            <div class="card-header bg-primary text-white">
+                Choose your toppings
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Choose Meats</li>
+                    <li class="list-group-item"><input type="checkbox" id="beef" name="3" aria-label="Radio button for following text input">
+                        <label for="beef">  Beef</label></li>
+                    <li class="list-group-item"><input type="checkbox" id="ham" name="3" aria-label="Radio button for following text input">
+                        <label for="ham">  Ham</label></li>
+                    <li class="list-group-item"><input type="checkbox" id="philly steak" name="3" aria-label="Radio button for following text input">
+                    <label for="philly steak">  Philly Steak</label></li>
+                    <li class="list-group-item"><input type="checkbox" id="bacon" name="3" aria-label="Radio button for following text input">
+                        <label for="bacon">  Bacon</label></li>
+                </ul>
+            </div>
+
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Choose Non-Meats</li>
+                    <li class="list-group-item"><input type="checkbox" id="green peppers" name="4" aria-label="Radio button for following text input">
+                        <label for="green peppers">  Green Peppers</label></li>
+                    <li class="list-group-item"><input type="checkbox" id="mushrooms" name="4" aria-label="Radio button for following text input">
+                        <label for="mushrooms">  Mushrooms</label></li>
+                    <li class="list-group-item"><input type="checkbox" id="onion" name="4" aria-label="Radio button for following text input">
+                        <label for="onion">  Onion</label></li>
+                    <li class="list-group-item"><input type="checkbox" id="jalepeno peppers" name="4" aria-label="Radio button for following text input">
+                        <label for="jalepeno peppers">  Jalepeno Peppers</label></li>
+                </ul>
+            </div>
+            <!--footer of third card-->
+            </div>
+            <div class="card-footer text-right text-muted">
+                <a href="#" class="btn btn-primary">Checkout ></a>
+            </div>
+        </div>
+
 
     </main>
 
@@ -130,6 +197,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-
 </body>
 </html>
