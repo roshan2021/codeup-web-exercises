@@ -120,6 +120,7 @@ a {
     border-bottom: 1px solid var(--separator-color);
     padding: 0.5em;
     overflow: auto;
+
 }
 
 .media-image {
