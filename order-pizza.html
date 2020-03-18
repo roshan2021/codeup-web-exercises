@@ -49,12 +49,12 @@
         <!--jumbotron div-->
         <div id="main-jumbo" class="jumbotron jumbotron-fluid d-none d-md-block">
 
-<!--            <div class="container">-->
+        <!--div class="container">-->
                 <h1 id="welcome-title" class="display-4">Welcome to Pizza World!</h1>
             </div>
         </div>
 
-        <!--h2 build your pizza nav-badges-->
+        <!--h2 build your pizza nav - tab - badges-->
         <h2>Build your own pizza!</h2>
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -68,39 +68,54 @@
             </li>
         </ul>
 
+
+
+<!--        <div class="tab-content">-->
+<!--            <div class="tab-pane active" id="sizecrust" role="tabpanel" aria-labelledby="home-tab"> Size and crust</div>-->
+<!--            <div class="tab-pane" id="cheese" role="tabpanel" aria-labelledby="profile-tab"> Cheese and Sauce</div>-->
+<!--            <div class="tab-pane" id="toppings" role="tabpanel" aria-labelledby="messages-tab"> Toppings</div>-->
+
+<!--        </div>-->
+
+
+
+
         <!--first card-->
         <div class="card text-left">
-            <div class="card-header bg-primary text-white">
-                Choose size and crust
-            </div>
-            <div class="card-body">
-                <ul class="list-group">
-                    <li class="list-group-item">Hand Tossed</li>
-                    <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                    <li class="list-group-item"><input type="radio" id="small" name="1" aria-label="Radio button for following text input">
-                         <label for="small">  Small (10")</label></li>
-                    <li class="list-group-item"><input type="radio" id="medium" name="1" aria-label="Radio button for following text input">
-                        <label for="small">  Medium (12")</label></li>
-                </ul>
-            </div>
+            <form action="">
+                <div class="card-header bg-primary text-white">
+                    Choose size and crust
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Hand Tossed</li>
+                        <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                        <li class="list-group-item"><input type="radio" id="small" name="1" aria-label="Radio button for following text input">
+                             <label for="small">  Small (10")</label></li>
+                        <li class="list-group-item"><input type="radio" id="medium" name="1" aria-label="Radio button for following text input">
+                            <label for="medium">  Medium (12")</label></li>
+                    </ul>
+                </div>
 
-            <div class="card-body">
-                <ul class="list-group">
-                    <li class="list-group-item">Crispy Thin</li>
-                    <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-                    <li class="list-group-item"><input type="radio" id="medium2" name="2" aria-label="Radio button for following text input">
-                        <label for="medium2">  Medium (12")</label></li>
-                    <li class="list-group-item"><input type="radio" id="large" name="2" aria-label="Radio button for following text input">
-                        <label for="large">  Large (14")</label></li>
-                </ul>
-            </div>
-            <div class="card-footer text-right text-muted">
-                <a href="#" class="btn btn-primary">Next Step ></a>
-            </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Crispy Thin</li>
+                        <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                        <li class="list-group-item"><input type="radio" id="medium2" name="2" aria-label="Radio button for following text input">
+                            <label for="medium2">  Medium (12")</label></li>
+                        <li class="list-group-item"><input type="radio" id="large" name="2" aria-label="Radio button for following text input">
+                            <label for="large">  Large (14")</label></li>
+                    </ul>
+                </div>
+                <div class="card-footer text-right text-muted">
+                    <a href="#" class="btn btn-primary">Next Step ></a>
+                </div>
+            </form>
         </div>
 
         <!--second card-->
         <div class="card text-left">
+            <form action="">
             <div class="card-header bg-primary text-white">
                 Choose Cheese and Sauce
             </div>
@@ -147,45 +162,48 @@
                 <a href="#" class="btn btn-primary">Next Step ></a>
             </div>
             </div>
+            </form>
         </div>
 
         <!--third card-->
         <div class="card text-left">
+            <form action="">
             <div class="card-header bg-primary text-white">
                 Choose your toppings
             </div>
             <div class="card-body">
                 <ul class="list-group">
                     <li class="list-group-item">Choose Meats</li>
-                    <li class="list-group-item"><input type="checkbox" id="beef" name="3" aria-label="Radio button for following text input">
+                    <li class="list-group-item"><input type="checkbox" id="beef-ck" name="3" aria-label="Radio button for following text input">
                         <label for="beef">  Beef</label></li>
-                    <li class="list-group-item"><input type="checkbox" id="ham" name="3" aria-label="Radio button for following text input">
+                    <li class="list-group-item"><input type="checkbox" id="ham-ck" name="3" aria-label="Radio button for following text input">
                         <label for="ham">  Ham</label></li>
-                    <li class="list-group-item"><input type="checkbox" id="philly steak" name="3" aria-label="Radio button for following text input">
+                    <li class="list-group-item"><input type="checkbox" id="philly steak-ck" name="3" aria-label="Radio button for following text input">
                     <label for="philly steak">  Philly Steak</label></li>
-                    <li class="list-group-item"><input type="checkbox" id="bacon" name="3" aria-label="Radio button for following text input">
+                    <li class="list-group-item"><input type="checkbox" id="bacon-ck" name="3" aria-label="Radio button for following text input">
                         <label for="bacon">  Bacon</label></li>
                 </ul>
             </div>
 
             <div class="card-body">
                 <ul class="list-group">
-                    <li class="list-group-item">Choose Non-Meats</li>
-                    <li class="list-group-item"><input type="checkbox" id="green peppers" name="4" aria-label="Radio button for following text input">
+                    <li class="list-group-item">Vegetarian</li>
+                    <li class="list-group-item"><input type="checkbox" id="green peppers-ck" name="4" aria-label="Radio button for following text input">
                         <label for="green peppers">  Green Peppers</label></li>
-                    <li class="list-group-item"><input type="checkbox" id="mushrooms" name="4" aria-label="Radio button for following text input">
+                    <li class="list-group-item"><input type="checkbox" id="mushrooms-ck" name="4" aria-label="Radio button for following text input">
                         <label for="mushrooms">  Mushrooms</label></li>
-                    <li class="list-group-item"><input type="checkbox" id="onion" name="4" aria-label="Radio button for following text input">
+                    <li class="list-group-item"><input type="checkbox" id="onion-ck" name="4" aria-label="Radio button for following text input">
                         <label for="onion">  Onion</label></li>
-                    <li class="list-group-item"><input type="checkbox" id="jalepeno peppers" name="4" aria-label="Radio button for following text input">
-                        <label for="jalepeno peppers">  Jalepeno Peppers</label></li>
+                    <li class="list-group-item"><input type="checkbox" id="jalepeno-peppers-ck" name="4" aria-label="Radio button for following text input">
+                        <label for="jalepeno-peppers">  Jalepeño Peppers</label></li>
                 </ul>
             </div>
+
             <!--footer of third card-->
-            </div>
             <div class="card-footer text-right text-muted">
-                <a href="#" class="btn btn-primary">Checkout ></a>
+                <a href="#" class="btn btn-primary">Checkout <i class="fa fa-shopping-cart"></i></a>
             </div>
+         </form>
         </div>
 
 
