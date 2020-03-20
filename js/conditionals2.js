@@ -1,5 +1,8 @@
 "use strict";
 
+
+
+
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -16,29 +19,7 @@
  * Can you refactor your code to use functions?
  */
 
-
-//Refractor the code to use functions
-function promptForNumber () {
-    var numberInput = prompt('Please enter a number.');
-    return parseInt(numberInput);
-}
-
-function evenOrOdd(aNumber) {
-    if (aNumber % 2 ===0) {
-        return "even";
-    } else {
-        return "odd";
-    }
-}
-
-function plus100(aNumber) {
-    return 100 + aNumber;
-}
-
-function negativeOrPositive(aNumber) {
-    return(aNumber >= 0) ? "positive" : "negative";
-}
-
+//UPDATE to ORIGINAL PRACTICE ONLY
 
 var isEnteringNumber = confirm('Would you like to enter a number?');
 //if user hits cancel, then it never enter the below code due to the condition of IF
