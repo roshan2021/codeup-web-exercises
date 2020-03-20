@@ -44,7 +44,7 @@ helloMessage = sayHello("Part 2 Apex");
  * console.
  */
 
-var myName = "Roshan"
+var myName = "Roshan";
 console.log("Part 3: var myName = ", sayHello(myName));
 
 
@@ -100,12 +100,8 @@ function calculateTip(tip, total) {
 }
 
 console.log("calculateTip (0.20, 20)", calculateTip(0.20, 20));
-// console.log("calculateTip (0.25, 25.50)", calculateTip(0.25, 25.50);
-// console.log("calculateTip (0.30, 100)", calculateTip(0.30, 100);
-
-
-
-
+console.log("calculateTip (0.25, 25.50)", calculateTip(0.25, 25.50));
+console.log("calculateTip (0.30, 100)", calculateTip(0.30, 100));
 
 /**
  * TODO:
