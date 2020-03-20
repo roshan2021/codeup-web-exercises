@@ -71,6 +71,26 @@ if (isEnteringNumber) {
  * console.logging the function's return value
  */
 
+
+function analyze(color) {
+    if (color === "blue") {
+        return color + " is the color of the sky";
+    } else if (color === "red") {
+        return "Strawberries are " + color;
+    }   else if (color == "cyan") {
+        return "I don't know anything about " + color;
+    }   else {
+        return color + " is not valid";
+    }
+}
+
+console.log(analyzeColor('blue'));
+console.log(analyzeColor('red'));
+console.log(analyzeColor('cyan'));
+console.log(analyzeColor('green'));
+
+
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -84,10 +104,16 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
+
+
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+
+
+
 
 /**
  * TODO:
@@ -95,6 +121,9 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+
+
 
 /* ########################################################################## */
 
@@ -117,6 +146,9 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+
+
+
 
 /**
  * TODO:
