@@ -16,12 +16,40 @@
  * Can you refactor your code to use functions?
  */
 
+
+//Refractor the code to use functions
+function promptForNumber () {
+    var numberInput = prompt('Please enter a number.');
+    return parseInt(numberInput);
+}
+
+function evenOrOdd(aNumber) {
+    if (aNumber % 2 ===0) {
+        return "even";
+    } else {
+        return "odd";
+    }
+}
+
+function plus100(aNumber) {
+    return 100 + aNumber;
+}
+
+function negativeOrPositive(aNumber) {
+    return(aNumber >= 0) ? "positive" : "negative";
+}
+
+
 var isEnteringNumber = confirm('Would you like to enter a number?');
+//if user hits cancel, then it never enter the below code due to the condition of IF
 
 if (isEnteringNumber) {
     // console.log('Entering a number');
-    var numberInput = prompt('Please enter a number.');
-    var parsedNumber = parseInt(numberInput);
+
+    // var numberInput = prompt('Please enter a number.');
+    // var parsedNumber = parseInt(numberInput);
+    var parsedNumber = promptForNumber();
+
 
     // console.log(parsedNumber, isNaN(parsedNumber));
 
@@ -30,18 +58,16 @@ if (isEnteringNumber) {
     }   else {
         // alert("You entered a number.");
 
-        var evenOrOdd = (parsedNumber % 2 === 0) ? "even" : "odd";
-        alert('The number is ' + evenOrOdd);
+        // var evenOrOdd = (parsedNumber % 2 === 0) ? "even" : "odd";
+        alert('The number is ' + evenOrOdd(parsedNumber));
 
-        var plus100 = parsedNumber + 100;
-        alert("The number plus 100 is " + plus100);
+        // var plus100 = parsedNumber + 100;
+        alert("The number plus 100 is " + plus100(parsedNumber));
 
-        var negativeOrPositive = (parsedNumber >= 0) ? "positive" : "negative";
-        alert('The number is ' + negativeOrPositive);
+        // var negativeOrPositive = (parsedNumber >= 0) ? "positive" : "negative";
+        alert('The number is ' + negativeOrPositive(parsedNumber));
     }
 }
-
-
 
 
 /* ########################################################################## */
