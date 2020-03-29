@@ -16,42 +16,77 @@
  * Can you refactor your code to use functions?
  */
 
-var wantToEnterNum = confirm ("Would you like to enter a number?");
+var isEnteringNumber = confirm("Would you like to enter a number?");
 
-if (wantToEnterNum) {
-    var enteredString = prompt("Enter a number");
+if(isEnteringNumber) {
+    console.log(isEnteringNumber);
+    var enterNumber = prompt("Enter a number");
+    enterNumber = parseInt(enterNumber);
 
-    if (!isNaN(enteredString)) {
-        var enteredNum = parseInt(enteredString);
-
-        alertOddOrEven(enteredNum);
-        alertNumberPlus100(enteredNum);
-        alertWhatSignNum(enteredNum);
-
+    if (isNaN(enterNumber)) {
+        alert('You did not enter a number');
     } else {
-        alert("You did not enter a number");
+        if (enterNumber % 2 === 0) {
+            alert(enterNumber + ' is even');
+        } else {
+            alert(enterNumber + ' is odd');
+        }
+
+        alert('Add 100 to your number = '  +  (enterNumber + 100));
+
+
+        if (enterNumber >= 0) {
+            alert(enterNumber + ' is positive');
+        } else if (enterNumber < 0) {
+            alert(enterNumber + ' is negative');
+        }
     }
 }
 
-function alertOddOrEven(num) {
-    if (num % 2 === 0) {
-        alert("The number is even");
-    } else {
-        alert("The number is odd");
-    }
-}
 
-function alertNumberPlus100(num) {
-    alert("Your number plus 100 is: " + (num  + 100));
-}
 
-function alertWhatSignNum(num){
-    if (enteredNum >= 0) {
-        alert ("It is a positive number");
-    } else {
-        alert ("It is a negative number");
-    }
-}
+//Douglas' solution to the exercise using "FUNCTIONS" approach
+// var isEnteringNumber = confirm('Would you like to enter a number?');
+// if (isEnteringNumber) {
+//     //console.log('Entering a number.');
+//     var parsedNumber = promptForNumber('Please enter a number.');
+//     //console.log(parsedNumber, isNaN(parsedNumber));
+//     if(isNaN(parsedNumber)) {
+//         alert("You didn't enter a number");
+//     } else {
+//         alert("You entered a number.");
+//         // * - whether the number is even or odd.
+//         alert('The number is ' + evenOrOdd(parsedNumber));
+//         // * - what the number plus 100 is
+//         alert('The number plus 100 is ' + plus100(parsedNumber));
+//         // * - if the number is negative or positive
+//         alert('The number is ' + negativeOrPositive(parsedNumber));
+//     }
+// }
+//
+// // Prompt the user for a number. Will return the number or NaN if they don't enter a number.
+// function promptForNumber(message) {
+//     var numberInput = prompt(message);
+//     return parseInt(numberInput);
+// }
+//
+// // Takes a number and returns the text "even" or "odd" depending on the number.
+// function evenOrOdd(aNumber) {
+//     if (aNumber % 2 === 0) {
+//         return "even";
+//     } else {
+//         return "odd";
+//     }
+// }
+//
+// function plus100(aNumber) {
+//     return aNumber + 100;
+// }
+//
+// //Take a number and return the text "positive" or "negative" depending on the number.
+// function negativeOrPositive(aNumber) {
+//     return (aNumber >= 0) ? "positive" : "negative";
+// }
 
 
 
@@ -75,29 +110,24 @@ function alertWhatSignNum(num){
  * console.logging the function's return value
  */
 
-var enteredColor = prompt("Enter a color from the rainbow");
-console.log(analyzeColor(enteredColor));
 
 function analyzeColor(color) {
-    color = color.toLowerCase();
-    if (color === 'red') {
-        return "Red are for roses";
-    } else if (color === 'yellow') {
-        return "Yellow is the sun";
-    } else if (color === 'orange') {
-        return "Orange are oranges";
-    } else if (color === 'green') {
-        return "Green are for grass";
-    } else if (color === 'blue') {
-        return "Blue is the sky";
-    } else if (color === 'indigo') {
-        return "Indigo is for ink";
-    } else if (color === 'violet') {
-        return "Violets are flowers";
+    if(color === 'blue') {
+        return color + " is the sky";
+    } else if (color === 'red') {
+        return 'Strawberries are ' + color;
+    }  else if (color === 'cyan') {
+        return "I don't know anything about " + color;
     } else {
-      return "You did not enter a color of the rainbow";
+        return color + " is not a valid color";
     }
 }
+
+console.log(analyzeColor('green'));
+console.log(analyzeColor('blue'));
+console.log(analyzeColor('red'));
+console.log(analyzeColor('cyan'));
+
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -120,37 +150,27 @@ console.log(analyzeColor(randomColor));
  * Refactor your above function to use a switch-case statement
  */
 
-function analyzeColorSwitch(color) {
-    color = color.toLowerCase();
-    var returnString = "";
-
+function analyzeColor(color) {
     switch (color) {
-        case "red":
-            returnString = "Red are for roses";
+        case 'blue':
+            return color + " is the sky";
             break;
-        case "yellow":
-            returnString = "Yellow is the sun";
+        case 'red':
+            return 'Strawberries are  ' + color;
             break;
-        case "orange":
-            returnString = "Orange are oranges";
-            break;
-        case "green":
-            returnString = "Green is for grass";
-            break;
-        case "blue":
-            returnString = "Blue is for the sky";
-            break;
-        case "indigo":
-            returnString = "Indigo is for ink";
-            break;
-        case "violet":
-            returnString = "Violet are for flowers";
+        case 'cyan':
+            return "I don't know  " + color;
             break;
         default:
-            returnString = "You did not enter a color of the rainbow";
+            return color + " is not valid";
+            break;
     }
-    return returnString
 }
+
+console.log(analyzeColor('green'));
+console.log(analyzeColor('blue'));
+console.log(analyzeColor('red'));
+console.log(analyzeColor('cyan'));
 
 
 
@@ -161,8 +181,8 @@ function analyzeColorSwitch(color) {
  * function to show it to the user.
  */
 
-var retrieveColor = prompt ("Enter a color");
-alert(analyzeColorSwitch(retrieveColor));
+var enterColor = prompt("enter a color");
+alert(analyzeColor(enterColor));
 
 
 
@@ -190,23 +210,20 @@ alert(analyzeColorSwitch(retrieveColor));
  */
 
 
-function calculateTotal(luckyNum, total) {
-    var discountPercentage = 0;
-    if (luckyNum === 0) {
-        discountPercentage = 0;
-    } else if (luckyNum === 1) {
-        discountPercentage = .1;
-    } else if (luckyNum === 2) {
-        discountPercentage = .25;
-    } else if (luckyNum === 3) {
-        discountPercentage = .35;
-    } else if (luckyNum === 4) {
-        discountPercentage = .50;
-    } else if (luckyNum === 5) {
-        discountPercentage = 1;
+function calculateTotal(luckyNumber, totalBill) {
+    if ( luckyNumber === 0 || luckyNumber > 5) {
+        return totalBill;
+    } else if (luckyNumber === 1) {
+        return totalBill * 0.90;
+    }   else if (luckyNumber === 2) {
+        return totalBill * 0.75;
+    } else if (luckyNumber === 3) {
+        return totalBill * 0.65;
+    }   else if (luckyNumber === 4) {
+        return totalBill * 0.50;
+    }   else if (luckyNumber === 5) {
+        return 0;
     }
-
-    return (1 - discountPercentage) * total;
 }
 
 console.log(calculateTotal(0, 100));
@@ -215,6 +232,36 @@ console.log(calculateTotal(2, 100));
 console.log(calculateTotal(3, 100));
 console.log(calculateTotal(4, 100));
 console.log(calculateTotal(5, 100));
+
+
+
+
+
+// function calculateTotal(luckyNum, total) {
+//     var discountPercentage = 0;
+//     if (luckyNum === 0) {
+//         discountPercentage = 0;
+//     } else if (luckyNum === 1) {
+//         discountPercentage = .1;
+//     } else if (luckyNum === 2) {
+//         discountPercentage = .25;
+//     } else if (luckyNum === 3) {
+//         discountPercentage = .35;
+//     } else if (luckyNum === 4) {
+//         discountPercentage = .50;
+//     } else if (luckyNum === 5) {
+//         discountPercentage = 1;
+//     }
+//
+//     return (1 - discountPercentage) * total;
+// }
+//
+// console.log(calculateTotal(0, 100));
+// console.log(calculateTotal(1, 100));
+// console.log(calculateTotal(2, 100));
+// console.log(calculateTotal(3, 100));
+// console.log(calculateTotal(4, 100));
+// console.log(calculateTotal(5, 100));
 
 
 
@@ -231,9 +278,11 @@ console.log(calculateTotal(5, 100));
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
 
-var totalBill = prompt ("What is your total bill?");
+var totalBill = prompt("What is your total bill?");
+totalBill = parseInt(totalBill);
+
 var discountedPrice = calculateTotal(luckyNumber, totalBill);
-alert("Your lucky number is: " + luckyNumber);
-alert("Your original price before the discount is: " + totalBill);
-alert("You price after the discount is: " + discountedPrice);
+alert("Your lucky number is " + luckyNumber);
+alert("Your bill before discount is " + totalBill);
+alert("Your price after discount is " + discountedPrice);
 
