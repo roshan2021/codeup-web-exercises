@@ -15,13 +15,11 @@
 var person = {};
 person.firstName = 'Roshan';
 person.lastName = 'Jacob';
-person.sayHello = function() {
-    console.log('Hello ' + this.firstName + " " + this.lastName);
-};
+
 
 console.log(person.firstName);
 console.log(person.lastName);
-person.sayHello();
+
 
     /**
      * TODO:
@@ -32,6 +30,12 @@ person.sayHello();
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+    person.sayHello = function() {
+        return 'Hello from ' + this.firstName + " " + this.lastName + "!";
+    };
+
+    console.log(person.sayHello());
 
 
     /** TODO:
@@ -104,16 +108,43 @@ person.sayHello();
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-
-
     var books = [
         {
             title: 'The Holy Bible',
-            author: 'God',
+            author: {
+                firstName: 'God',
+                lastName: 'noLastName'
+            }
+        },
+        {
+            title: 'The Great Gatsby',
+            author: {
+                firstName: 'F. Scott',
+                lastName: 'Fitzgerald'
+            }
+        },
+        {
+            title: 'The Four Laws of Love',
+            author: {
+                firstName: 'Jimmy',
+                lastName: 'Evans'
+            }
+        },
+        {
+            title: 'The Namesake',
+            author: {
+                firstName: 'Jhumpa',
+                lastName: 'Lahiri'
+            }
+        },
+        {
+            title: "The Hitchhiker's Guide to the Galaxy",
+            author: {
+                firstName: "Douglas",
+                lastName: 'Adams'
+            }
         }
     ];
-
-
 
 
     /**
@@ -140,6 +171,19 @@ person.sayHello();
      *      ---
      *      ...
      */
+    //Bonus: extra work
+    books.push(createBook("The Salmon of Doubt", "Douglas Adams"));
+    //Bonus work above
+
+
+
+    books.forEach(function(abook, index){
+        console.log("Book # " + (index + 1));
+        console.log("Title: " +  abook.title);
+        console.log("Author: " + abook.author.firstName + " " + abook.author.lastName);
+        console.log("---");
+    });
+
 
     /**
      * Bonus:
@@ -151,5 +195,20 @@ person.sayHello();
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(aTitle, authorName){
+
+        var names = authorName.split(" ");
+
+        return {
+            title: aTitle,
+            author: {
+                firstName: names[0],
+                lastName: names[1]
+            }
+        };
+    }
+
+    console.log(createBook("Harry Potter", "JK Rowling"));
 
 })();
