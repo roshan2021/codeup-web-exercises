@@ -1,86 +1,23 @@
+
 "use strict";
+(function() {
+    // Get the search link anchor by id
+    var searchLink = document.getElementById("search-link");
 
-var inventory = [];
+    // Does an element have an attribute?
+    console.log(searchLink.hasAttribute("href")); // Prints true
+    console.log(searchLink.hasAttribute("class")); // Prints false
 
-var ferCar = {
-    make: "Nissan",
-    model: "Maxima",
-    price: 25000,
-    year: 2014,
-    features: ["Automatic Windows", "Bluetooth Connectivity", "GPS Navigation"],
-    owner: {
-        name: "Fernando Mendoza",
-        age: 29
-    },
-    honk: function (){
-        alert("Honk!!!");
-    },
-    computerLog: function(){
-        console.log("--- " + this.make + " --- " + this.model + " ---");
-    }
-};
+    // Get an attribute value
+    console.log(searchLink.getAttribute("href")); // Prints "http://www.yahoo.com"
 
-var douglasCar = {
-    make: "Toyota",
-    model: "Avalon",
-    price: 24000,
-    year: 2015
-};
+    // Add or modify an attribute
+    searchLink.setAttribute("class", "btn btn-default");
+    // Adds the attribute class and sets it to "btn btn-default"
 
-// this info came from a form submit
-douglasCar.features = ["Automatic Windows", "Great Gas Mileage", "AM/FM Radio"];
-douglasCar["owner"] = {name: prompt("Who's the owner?"), age: prompt("How old is owner?")};
-douglasCar.honk = function(){
-    alert("Honk!");
-};
-douglasCar.computerLog = function(){
-    console.log("--- " + this.make + " --- " + this.model + " ---");
-};
+    searchLink.setAttribute("href", "http://google.com");
+    // Changes the href attribute to "http://google.com"
 
-inventory.push(ferCar);
-inventory.push(douglasCar);
-
-inventory.forEach(function(aCar){
-    console.log(aCar.make + " " + aCar.model + " cost = $" + aCar.price + " " + aCar.features + " " + aCar.owner.name + " " + aCar.owner.age);
-});
-
-
-// Run tests on the car
-inventory.forEach(function(currentCar){
-    // Get the computerLog
-    currentCar.computerLog();
-
-    // test the honking feature:
-    currentCar.honk();
-})
-
-// 2nd example
-var ferContact = {
-    name: "fer mendoza",
-    phoneNumber: "3424234252345"
-};
-
-var aContact = {
-    name: prompt("Name?"),
-    phoneNumber: prompt("Number?")
-};
-
-var phone = {
-    screenSize: 5.1,
-    price: 500.99,
-    brand: "Apple",
-    color: "blue",
-    storageSize: 128,
-    contacts: [ferContact, aContact],
-    call: function(number){
-        console.log("calling: " + number);
-    }
-};
-
-// print the name of the first contact
-console.log(phone.contacts[0].name);
-console.log(phone.contacts[0].phoneNumber);
-
-// make a call to the second contact
-phone.call(phone.contacts[1].phoneNumber);
-
+    // Remove an attribute
+    searchLink.removeAttribute("class"); // Remove the class attribute
+})();
