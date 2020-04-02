@@ -38,7 +38,7 @@ var map = new mapboxgl.Map({
 //Use the .setLngLat() and .addTo() methods to add marker to the map
 
 
-// TODO TOGETHER: Add a marker to the map using the following coordinates [-96.8084, 32.7799]. This marker will mark the Sixth Floor Muesume on our map.
+// TODO TOGETHER: Add a marker to the map using the following coordinates [-96.8084, 32.7799]. This marker will mark the Sixth Floor Museum on our map.
 // TODO TOGETHER: Change the color of the marker
 
 
