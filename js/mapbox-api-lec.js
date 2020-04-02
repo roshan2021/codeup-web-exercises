@@ -42,19 +42,19 @@ var map = new mapboxgl.Map({
 // TODO TOGETHER: Change the color of the marker
 
 
-var markerOptions = {
-    color: "purple",
-    draggable: true,
-    anchor: 'bottom-left'
-};
-
-var marker = new mapboxgl.Marker(markerOptions)
-    .setLngLat([-96.8057, 32.7787])
-    .addTo(map);
-
-var markerMuseum = new mapboxgl.Marker(markerOptions)
-    .setLngLat([-96.8084, 32.7799])
-    .addTo(map);
+// var markerOptions = {
+//     color: "purple",
+//     draggable: true,
+//     anchor: 'bottom-left'
+// };
+//
+// var marker = new mapboxgl.Marker(markerOptions)
+//     .setLngLat([-96.8057, 32.7787])
+//     .addTo(map);
+//
+// var markerMuseum = new mapboxgl.Marker(markerOptions)
+//     .setLngLat([-96.8084, 32.7799])
+//     .addTo(map);
 
 
 
@@ -72,16 +72,16 @@ var markerMuseum = new mapboxgl.Marker(markerOptions)
 
 // TODO TOGETHER: Add a popup to the map over codeup. Set the html as a paragraph that says "Codeup Rocks!"
 
-var popup = new mapboxgl.Popup()
-    .setHTML("<h1>Codeup Rocks!</h1>")
-    .addTo(map);
-
-marker.setPopup(popup);
+// var popup = new mapboxgl.Popup()
+//     .setHTML("<h1>Codeup Rocks!</h1>")
+//     .addTo(map);
+//
+// marker.setPopup(popup);
 
 
 
 // TODO TOGETHER: Comment out the popup we just added. Add a popup to the Sixth Floor Musume marker.
-//
+
 // var popupMuseum = new mapboxgl.Popup()
 //     .setHTML("<h1>Sixth Floor Museum</h1>")
 //     .addTo(map);
@@ -93,11 +93,11 @@ marker.setPopup(popup);
 // TODO: Try setting the text by using ".setText()" instead of ".setHTML()"
 
 
-var popupMuseum = new mapboxgl.Popup()
-    .setText("<h1>Sixth Floor Museum</h1>")
-    .addTo(map);
-
-markerMuseum.setPopup(popupMuseum);
+// var popupMuseum = new mapboxgl.Popup()
+//     .setText("<h1>Sixth Floor Museum</h1>")
+//     .addTo(map);
+//
+// markerMuseum.setPopup(popupMuseum);
 
 
 /**********************************************
@@ -107,6 +107,20 @@ markerMuseum.setPopup(popupMuseum);
 
 
 // TODO TOGETHER: Using the Geocoder helper function, log the coordinates of Codeup and recenter the map to focus on Codeup. Comment out previous map code.
+
+
+geocode("701 Commerce St, Dallas, TX. 75202", mapboxToken).then(function(result) {
+    console.log(result);
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 16
+    });
+    //Right here add the code from the Todos below.
+    // map.setCenter(result);
+    //map.jumpTo({center: result});
+    map.flyTo({center: result});
+});
 
 
 
@@ -120,6 +134,9 @@ markerMuseum.setPopup(popupMuseum);
 
 // TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -96.8084, lat: 32.7799} to get a physical address for the Sixth Floor Museum
 
+reverseGeocode({lng: -96.8084, lat: 32.7799}, mapboxToken).then(function(result){
+    console.log('reverseGeocode: ' + result);
+});
 
 
 // TODO: Reverse geocode coordinates of your choice using the reverse geocode method
