@@ -59,6 +59,12 @@ var popupHGSupply = new mapboxgl.Popup()
             }
         ]
 
+        restaurants.forEach(function(arestaurant, index){
+            console.log("Restaurant name: " + arestaurant.name);
+            console.log("Address: " + arestaurant.address);
+            console.log("Genre: " + arestaurant.genre);
+            console.log("---");
+        });
 });
 
 
