@@ -1,4 +1,4 @@
-"use strict"; // leave this line here :)
+"use strict";
 
 // Keep this function definition in order to test expected vs. actual results
 const assert = function(actual, expected, message = "") {
