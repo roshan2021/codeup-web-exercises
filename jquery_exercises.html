@@ -6,18 +6,18 @@
 </head>
 <body>
     <h1 id="code">Let's Code</h1>
-    <p class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur doloremque dolores facere hic minima praesentium quae tempore, totam ut? Asperiores facilis fuga itaque modi quam suscipit temporibus vitae! Voluptatum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur doloremque dolores facere hic minima praesentium quae tempore, totam ut? Asperiores facilis fuga itaque modi quam suscipit temporibus vitae! Voluptatum.</p>
     <h3>Attending Codeup</h3>
     <ul>
         <li>turn computer on</li>
-        <li class="codeup">open intell-J</li>
+        <li>open intell-J</li>
         <li>insert code</li>
         <li>run code in browser, Chrome</li>
         <li>open Chrome console</li>
         <li>fix errors</li>
     </ul>
 
-    <div class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A assumenda dolore eaque, expedita fugiat, in magnam officia pariatur perferendis perspiciatis quam veritatis voluptate voluptatum! Asperiores assumenda beatae consequuntur deserunt illum.</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A assumenda dolore eaque, expedita fugiat, in magnam officia pariatur perferendis perspiciatis quam veritatis voluptate voluptatum! Asperiores assumenda beatae consequuntur deserunt illum.</div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -32,7 +32,13 @@
             console.log("the page is ready");
         });
 
-        $('.codeup').css('border', '1px solid red');
+        $('li').css('font-size', '20px');
+        $('h1').css('background-color', 'yellow');
+        $('p').css('background-color', 'yellow');
+        $('li').css('background-color', 'yellow');
+
+        alert($('#code').html());
+
 
 
 
