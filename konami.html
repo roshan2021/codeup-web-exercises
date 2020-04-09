@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+
+<script>
+    "use strict";
+
+    var keys = [];
+    var konamiKeys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    $(document).keyup(function(event){
+        //Add the new key to the end of the array.
+        keys.push(event.keyCode);
+
+        //Only keep the last 10 key strokes.
+        keys = keys.slice(-10);
+        console.log(keys);
+
+        //Compare konamiKeys to the keys entered.
+        console.log(keys.join('') + ' ' + konamiKeys.join(''));
+        if(keys.join('') === konamiKeys.join('')) {
+
+
+            alert('You get 30 lives!');
+            $('body').css('background-color', 'green');
+            $('body').css('color', 'white');
+            $('body').css('transition', 'background-color 1s');
+
+
+        }
+    });
+</script>
+</body>
+</html>

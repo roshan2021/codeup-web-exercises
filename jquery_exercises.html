@@ -32,13 +32,25 @@
             console.log("the page is ready");
         });
 
-        $('li').css('font-size', '20px');
-        $('h1').css('background-color', 'yellow');
-        $('p').css('background-color', 'yellow');
-        $('li').css('background-color', 'yellow');
+        $('h1').click(function () {
+            $('h1').css('background-color', 'orange');
 
-        alert($('#code').html());
+        });
 
+        $('p').dblclick(function () {
+            $('p').css('font-size', '18px');
+
+        });
+
+        var inHandler = function() {
+            $('li').css('background-color', 'red');
+        };
+
+        var outHandler = function() {
+            $('li').css('background-color', 'black');
+        };
+
+        $('li').hover(inHandler, outHandler);
 
 
 
