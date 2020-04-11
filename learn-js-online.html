@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn JS Online</title>
+</head>
+<body>
+<script>
+
+
+function capitalize(name) {
+    return name[0].toUpperCase() + name.substring(1).toLowerCase();
+}
+console.log(capitalize("rOShaN"))
+
+function removeExtraWhitespace(text){
+    return text.trim();
+}
+console.log(removeExtraWhitespace(" What's up "));
+
+
+var x = 'global';
+let y = 'global';
+
+console.log(x);
+console.log(y);
+
+
+
+function sumGrades(grades) {
+    let sum = 0;
+    grades.forEach(function(grade) {
+        sum = grade + sum;
+    });
+    return sum;
+}
+console.log(sumGrades([15, 5, 10]));
+
+function multiplyNum(numbers) {
+    let multiply = 1;
+    numbers.forEach(function(number) {
+        multiply = number * multiply;
+    });
+    return multiply;
+}
+console.log(multiplyNum([2, 2, 2]));
+
+function sumOddNumbers(numbers) {
+    let sum = 0;
+    numbers.forEach(function(number){
+        if(number % 2 !== 0) {
+            sum += number;
+        }
+    });
+        return sum;
+}
+
+console.log(sumOddNumbers([15, -5, 10]));
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
