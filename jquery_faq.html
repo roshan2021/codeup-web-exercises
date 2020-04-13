@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuery FAQ</title>
+<!--        BOOTSTRAP 4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+        <style>
+            
+            #parks-Image{
+                width: 30%;
+            }
+
+            .invisible {
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="toggle" type="button" class="btn btn-secondary" >Invisible Mode</button>
+
+        <div id="parks"></div>
+        <h2 id="heading">10 FAQs about National Parks</h2>
+
+
+        <dl>
+            <dt>Who is the director of the National Park Service?</dt>
+            <dd class="invisible">David Vela is the Deputy Director, exercising the authority of the Director of the National Park Service.</dd>
+
+            <dt>How many employees are in the National Park Service?</dt>
+            <dd class="invisible">Permanent, temporary, and seasonal employees: More than 20,000.</dd>
+            <dd class="invisible">Volunteers: More than 315,000 in 2017</dd>
+
+            <dt>How old is the National Park System?</dt>
+            <dd class="invisible">The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. </dd>
+
+            <dt>What is the origin of the National Park Service arrowhead?</dt>
+            <dd class="invisible">The arrowhead was authorized as the official National Park Service emblem by the Secretary of the Interior on July 20, 1951. The components of the arrowhead may have been inspired by key attributes of the National Park System, with the sequoia tree and bison representing vegetation and wildlife, the mountains and water representing scenic and recreational values, and the arrowhead itself representing historical and archeological values. </dd>
+
+            <dt>How many areas are in the National Park System?</dt>
+            <dd class="invisible">The system includes 419 areas covering more than 85 million acres in every state, the District of Columbia, American Samoa, Guam, Puerto Rico, and the Virgin Islands. These areas include national parks, monuments, battlefields, military parks, historical parks, historic sites, lakeshores, seashores, recreation areas, scenic rivers and trails, and the White House. </dd>
+
+            <dt>What is the largest national park site? Smallest?</dt>
+            <dd class="invisible">Largest: Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</dd>
+            <dd class="invisible">Smallest: Thaddeus Kosciuszko National Memorial, PA, at 0.02 acres</dd>
+
+            <dt>How many people visit the national parks?</dt>
+            <dd class="invisible">Total recreation visitors to the national parks in 2018: 318,211,833.</dd>
+
+            <dt>What is the National Park Service budget?</dt>
+            <dd class="invisible">FY 2017 Enacted: $2.932 billion</dd>
+
+            <dt>How do I obtain a park entrance pass?</dt>
+            <dd class="invisible">Fewer than one-third of the national parks charge entrance fees. You can obtain park entrance passes by visiting a park site that charges an entrance fee. Entrance fee sites have passes available; we recommend calling a park prior to your visit. (See the park search to locate a specific park.) There are a number of entrance passes available, including park-specific passes as well as passes that offer entrance to more than 2,000 federal recreation sites in addition to the national parks (Annual, Military, Senior, 4th Grade, Access, and Volunteer passes). </dd>
+
+            <dt>How do I make reservations for camping/lodging in national parks?</dt>
+            <dd class="invisible">For campground reservations, visit Recreation.gov. Not all parks participate in this service; many campgrounds are first come, first served. </dd>
+        </dl>
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+                crossorigin="anonymous"></script>
+        <script>
+            "use strict";
+
+            $(document).ready(function(){
+                console.log("the page is ready");
+            });
+                var $parksPic = $('#parks');
+                $parksPic.html('<img id="parks-Image" src="data:image/jpeg;base64,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 "  alt="">');
+
+                $('#heading').css('color', 'red');
+
+                $('dt').css('fontSize', '1.25em').css('fontWeight', 'bolder');
+
+                $('#toggle').click(function(){
+                    $('dd').toggleClass('invisible').css('fontSize', '1.25em').css('color', 'blue');
+                });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+    </body>
+</html>
