@@ -5,9 +5,14 @@
     <title>jQuery FAQ</title>
 
     <style>
-
+        ul {
+            display: none;
+        }
         .invisible {
             visibility: hidden;
+        }
+        .highlight {
+            background-color: yellow;
         }
     </style>
 </head>
@@ -59,30 +64,30 @@
 
     <button id="btn-parks" type="button" class="btn btn-secondary" >Fun Fact</button>
     <h3>Big Bend National Park, in Texas</h3>
-        <ul class="parks">
+        <ul>
             <li>Visitors are welcome stay in the park up to 14 consecutive nights in either a front or backcountry site, with a limit of 28 total nights in the park in a calendar year.
                 Campers can occupy a specific site up to 14 total nights in a year.
                 EXCEPTION: During the busiest period of the year, January 1–April 15, visitors are limited to a total of 14 nights in the park.</li>
             <li>Cell service is very spotty throughout the entire Big Bend area. Areas with fairly reliable service include the Chisos Basin area, and near Panther Junction.</li>
             <li>A $30 per vehicle entrance fee is required, or a $15 individual fee, unless you have a park pass. Fees and passes can be purchased at entrance stations or visitor centers. Commercial permits are required for businesses. and a special use permit may be required for some activities.</li>
-            <li class="lastLi">Are campfires allowed?
+            <li>Are campfires allowed?
                 NO. Ground fires and wood fires are prohibited throughout Big Bend National Park. Charcoal is allowed in grills in campgrounds. You may have a fire in a fire pan while on a river trip, or use a containerized fuel stove for backpacking.</li>
             </ul>
     <h3>Haleakala National Park in Maui, Hawaii</h3>
-        <ul class="parks">
+        <ul>
             <li>Summit Area
                 Drive time to get to the 10,023 foot summit from:
                 Kahului is 2.5 hours; Wailea is 3 hours; Lahaina is 3.5 hours</li>
             <li>Yes. Bicylists must stay on the paved roads. Bikes are not allowed on any park trails. Check out the bicycling page before you plan your ride.</li>
             <li>The park is open 24 hours a day, 7 days a week, 365 days a year. Our visitor centers, however, are not. </li>
-            <li class="lastLi">There are two drive-up campgrounds, two backcountry campgrounds, and three backcountry cabins. </li>
+            <li>There are two drive-up campgrounds, two backcountry campgrounds, and three backcountry cabins. </li>
         </ul>
     <h3>Yosemite National Park in California</h3>
-        <ul class="parks">
+        <ul>
             <li>Tire chains may be required in fall, winter, and spring due to snowy or icy conditions. It's not possible to predict when exactly they may be required since requirements are based on conditions.</li>
             <li>The Tioga Road (Highway 120 through the park, from Crane Flat to Tioga Pass) is open approximately late May through October, though these dates vary depending on conditions. </li>
             <li>There are three giant sequoia groves in Yosemite National Park: the Mariposa Grove, the Tuolumne Grove, and the Merced Grove.</li>
-            <li class="lastLi">Horsetail Fall flows in winter and early spring, when snow is present on top of El Capitan. On sunny afternoons in mid- to late February, the setting sun can cause it to glow orange.</li>
+            <li>Horsetail Fall flows in winter and early spring, when snow is present on top of El Capitan. On sunny afternoons in mid- to late February, the setting sun can cause it to glow orange.</li>
         </ul>
 
 
@@ -93,11 +98,13 @@
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous"></script>
     <script>
+
         "use strict";
 
         $(document).ready(function(){
             console.log("the page is ready");
         });
+
 
         $('#heading').css('color', 'red');
 
@@ -108,31 +115,37 @@
         });
 
         $('#btn-parks').click(function(){
-            $('li').last().css('background-color', 'yellow');
+            $('ul').each(function(){
+                $(this).children().last().toggleClass('highlight');
+            });
         });
 
         $('h3').click(function(){
-            $('li').css('fontWeight', 'bolder');
+            $(this).next().children().css('font-weight', 'bold');
+            $(this).next().slideToggle(3000);
         });
 
         $('li').click(function(){
-            $('li').first().css('color', 'blue');
+            // li ---> ul -> lis of ul > first
+            // $(this).parent().children().first().toggleClass('first-item-highlight')
+            $(this).parent().children().first().css('color', 'blue');
         });
 
 
-        //EFFECTS EXERCISE
-        // $('span').click(function(){
-        //     $('h1').hide();
-        // });
-        //
-        // $('ul').hide();
-        //
-        // $('h3').click(function(){
-        //     $('ul').toggle().slideDown();
-        // });
-        //
-        // $('#register').hide();
-        // $('h2').fadeIn(8000);
+
+        // EFFECTS EXERCISE
+        $('span').click(function(){
+            $('h1').hide();
+        });
+
+
+
+
+
+
+        $('#register').hide();
+        $('h2').fadeIn(8000);
+
 
 
     </script>
