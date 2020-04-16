@@ -10,26 +10,22 @@
 </head>
 <body>
 
-    <h6 id="date">Date</h6>
-    <p id="max">&#8457;</p>
-    <p id="min"></p>
-    <img id="icon" alt="weather icon">
-
-    <ul>
-        <li id="description"></li>
-        <li id="humidity"></li>
-        <li id="wind"></li>
-        <li id="pressure"></li>
-    </ul>
+<div id="weatherDays"></div>
 
 <!--    BOOTSTRAP 4.1-->
     <main class="container">
         <div id="weather" class="card-deck"></div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Featured
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+        </div>
     </main>
-
-<!--    <img id="icon" alt="weather icon">-->
-
-
 
 
     <script
@@ -48,87 +44,49 @@
         "use strict";
         (function() {
 
-            // $.get("http://api.openweathermap.org/data/2.5/weather", {
-            //     "APPID": OWM_KEY,
-            //     "q":     "Dallas, US",
-            //     "units": "imperial"
-            // }).done(function(data){
-            //     console.log(data);
-            // }).fail(function(errors){
-            //     console.error(errors);
-            // });
-
-
-
-            // $.get("http://api.openweathermap.org/data/2.5/weather", {
-            //     APPID: OWM_KEY,
-            //     lat:    29.9557146,
-            //     lon:   -90.0692277,
-            //     units: "imperial"
-            // }).done(function(data) {
-            //     console.log('current weather', data);
-            // });
-
-            // $.get("http://api.openweathermap.org/data/2.5/forecast", {
-            //     "APPID": OWM_KEY,
-            //     "q":     "Dallas, US",
-            //     "units": "imperial"
-            // }).done(function(data) {
-            //     console.log('current weather', data);
-            //     var imgUrl = "http://openweathermap.org/img/w/"+data.list[9].weather[0].icon+".png";
-            //     $("#icon").attr('src', imgUrl);
-            // });
-
-//here
             $.get("https://api.openweathermap.org/data/2.5/onecall", {
                     "APPID": OWM_KEY,
                     "lat":   32.7767,
                     "lon":  -96.78,
                     "units": "imperial"
             }).done(function(data) {
+                console.log(data);
 
-                for(var i = 0; i < 5; i++) {
+                var dailyDate = {};
 
+                let htmlCard = "";
+
+
+                for(var x = 0; x < 5; x++) {
+                   dailyDate = (data.daily[x].dt) * 1000;
+                   var dates = new Date((dailyDate));
+                   var extractDate = dates.toDateString();
+                   var maxTemp = data.daily[x].temp.max;
+                   var minTemp = data.daily[x].temp.min;
+                   var iconUrl = "http://openweathermap.org/img/wn/"+data.daily[x].weather[0].icon+"@2x.png";
+                   var description1 = data.daily[x].weather[0].description;
+                   var humidity1 = data.daily[x].humidity;
+                   var wind1 = data.daily[x].wind_speed;
+                   var pressure1 = data.daily[x].pressure;
+
+                    $("#weatherDays").empty();
+
+                    htmlCard += "<h6>"+extractDate+"</h6>" +
+                                "<p>"+maxTemp+"&#8457;"+"</p>" +
+                                "<p>"+minTemp+"&#8457;"+"</p>" +
+                                "<img src='"+iconUrl+"'>" +
+                                "<ul>" +
+                                "<li>"+description1+"</li>" +
+                                "<li>"+humidity1+"</li>" +
+                                "<li>"+wind1+"</li>" +
+                                "<li>"+pressure1+"</li>" +
+                                "</ul>";
+                    $("#weatherDays").append(htmlCard);
                 }
-
-                var dailyDate = (data.daily[0]);
-                var dates = Date((dailyDate.dt * 1000));
-                var extractDate = dates.substr(0, 15);
-                $("#date").text(extractDate);
-
-
-                var maxTemp = dailyDate.temp.max;
-                $("#max").text(maxTemp);
-
-                var minTemp = dailyDate.temp.min;
-                $("#min").text(minTemp);
-
-                var iconUrl = "http://openweathermap.org/img/wn/"+dailyDate.weather[0].icon+"@2x.png";
-                $("#icon").attr('src', iconUrl);
-
-                var description1 = dailyDate.weather[0].description;
-                $("#description").text(description1);
-
-                var humidity1 = dailyDate.humidity;
-                $("#humidity").text(humidity1);
-
-                var wind1 = dailyDate.wind_speed;
-                $("#wind").text(wind1);
-
-                var pressure1 = dailyDate.pressure;
-                $("#pressure").text(pressure1);
-
-
             }).fail(function(errors){
                 console.error(errors);
             });
-
-
-
-
         })();
     </script>
-
-
 </body>
 </html>
