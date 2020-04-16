@@ -10,20 +10,13 @@
 </head>
 <body>
 
-<div id="weatherDays"></div>
-
 <!--    BOOTSTRAP 4.1-->
     <main class="container">
-        <div id="weather" class="card-deck"></div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-header">
-                Featured
+        <div id="weatherDays" class="card-deck">
+
+
+
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
         </div>
     </main>
 
@@ -71,16 +64,20 @@
 
                     $("#weatherDays").empty();
 
-                    htmlCard += "<h6>"+extractDate+"</h6>" +
-                                "<p>"+maxTemp+"&#8457;"+"</p>" +
-                                "<p>"+minTemp+"&#8457;"+"</p>" +
-                                "<img src='"+iconUrl+"'>" +
-                                "<ul>" +
-                                "<li>"+description1+"</li>" +
-                                "<li>"+humidity1+"</li>" +
-                                "<li>"+wind1+"</li>" +
-                                "<li>"+pressure1+"</li>" +
-                                "</ul>";
+                    htmlCard +=  "<div class=\"card\" style=\"width: 18rem;\">" +
+                                    "<div class=\"card-header\">"+extractDate+"</div>\n" +
+                                        "<ul class=\"list-group list-group-flush\"> \n" +
+                                            "<li class=\"list-group-item\">"+maxTemp+"&#8457;"+"</li>\n" +
+                                            "<li class=\"list-group-item\">"+minTemp+"&#8457;"+"</li>\n" +
+                                            "<img src='"+iconUrl+"'>" +
+                                            "<li class=\"list-group-item\">"+description1+"</li>\n" +
+                                            "<li class=\"list-group-item\">"+humidity1+"</li>\n" +
+                                            "<li class=\"list-group-item\">"+wind1+"</li>\n" +
+                                            "<li class=\"list-group-item\">"+pressure1+"</li>\n" +
+                                        "</ul>" +
+                                    "</div>";
+
+
                     $("#weatherDays").append(htmlCard);
                 }
             }).fail(function(errors){
