@@ -12,12 +12,34 @@
 
 <!--    BOOTSTRAP 4.1-->
     <main class="container">
-        <div id="weatherDays" class="card-deck">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
+            <a class="navbar-brand text-white" href="#">Weather App</a>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" href="#"><i class="fas fa-user"></i>Current City:  Dallas </a>
+                            </li>
+                        </ul>
+                </div>
+        </nav>
+        <br>
 
 
-
+        <form class="form-inline">
+            <div class="form-group mb-2">
+                <label for="place" class="sr-only">Place</label>
+                <input type="text" readonly class="form-control-plaintext text-right"  id="place" value="Place">
             </div>
-        </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="place2" class="sr-only">Place</label>
+                <input type="search" class="form-control" id="place2" placeholder="search">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Find</button>
+        </form>
+
+        <br>
+
+        <div id="weatherDays" class="card-deck"></div>
     </main>
 
 
@@ -54,12 +76,20 @@
                    dailyDate = (data.daily[x].dt) * 1000;
                    var dates = new Date((dailyDate));
                    var extractDate = dates.toDateString();
+
                    var maxTemp = data.daily[x].temp.max;
+                        maxTemp = Math.round(maxTemp);
+
                    var minTemp = data.daily[x].temp.min;
+                        minTemp = Math.round(minTemp);
+
                    var iconUrl = "http://openweathermap.org/img/wn/"+data.daily[x].weather[0].icon+"@2x.png";
                    var description1 = data.daily[x].weather[0].description;
                    var humidity1 = data.daily[x].humidity;
+
                    var wind1 = data.daily[x].wind_speed;
+                        wind1 = Math.round(wind1);
+
                    var pressure1 = data.daily[x].pressure;
 
                     $("#weatherDays").empty();
@@ -67,16 +97,15 @@
                     htmlCard +=  "<div class=\"card\" style=\"width: 18rem;\">" +
                                     "<div class=\"card-header\">"+extractDate+"</div>\n" +
                                         "<ul class=\"list-group list-group-flush\"> \n" +
-                                            "<li class=\"list-group-item\">"+maxTemp+"&#8457;"+"</li>\n" +
-                                            "<li class=\"list-group-item\">"+minTemp+"&#8457;"+"</li>\n" +
-                                            "<img src='"+iconUrl+"'>" +
-                                            "<li class=\"list-group-item\">"+description1+"</li>\n" +
-                                            "<li class=\"list-group-item\">"+humidity1+"</li>\n" +
-                                            "<li class=\"list-group-item\">"+wind1+"</li>\n" +
-                                            "<li class=\"list-group-item\">"+pressure1+"</li>\n" +
+                                            "<li class=\"list-group-item\">"+maxTemp+"&#8457;"+" / "+minTemp+"&#8457;"+"<img src='"+iconUrl+"'>"+"</li>\n" +
+                                            // "<li class=\"list-group-item\">"+minTemp+"&#8457;"+"</li>\n" +
+                                            // "<img src='"+iconUrl+"'>" +
+                                            "<li class=\"list-group-item\">Description: "+description1+"</li>\n" +
+                                            "<li class=\"list-group-item\">Humidity: "+humidity1+" %"+"</li>\n" +
+                                            "<li class=\"list-group-item\">Wind: "+wind1+" mph"+"</li>\n" +
+                                            "<li class=\"list-group-item\">Pressure: "+pressure1+" inHG"+"</li>\n" +
                                         "</ul>" +
                                     "</div>";
-
 
                     $("#weatherDays").append(htmlCard);
                 }
