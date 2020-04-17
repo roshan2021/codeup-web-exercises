@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map API Project</title>
+
+<!--    MAPBOX API-->
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+
+    <!--    BOOTSTRAP 4.4.1-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
 
-</head>
-<body>
 
-<!--    BOOTSTRAP 4.1-->
+</head>
+
+
+<body>
+<!--    BOOTSTRAP 4.4.1-->
     <main class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
             <a class="navbar-brand text-white" href="#">Weather App</a>
@@ -28,7 +37,7 @@
         <form class="form-inline">
             <div class="form-group mb-2">
                 <label for="place" class="sr-only">Place</label>
-                <input type="text" readonly class="form-control-plaintext text-right"  id="place" value="Place">
+                <input type="text" readonly class="form-control-plaintext text-right"  id="place" value="Location">
             </div>
             <div class="form-group mx-sm-3 mb-2">
                 <label for="place2" class="sr-only">Place</label>
@@ -36,13 +45,14 @@
             </div>
             <button type="submit" class="btn btn-primary mb-2">Find</button>
         </form>
-
         <br>
 
+<!--        htmlCard generated-->
         <div id="weatherDays" class="card-deck"></div>
     </main>
+    <br>
 
-
+<!--    BOOTSTRAP-->
     <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -53,66 +63,26 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
+
+<!--KEYS.JS File needs to go above MAPBOX API html code, do not duplicate keys.js file below -->
     <script src="js/keys.js"></script>
 
-    <script>
-        "use strict";
-        (function() {
-
-            $.get("https://api.openweathermap.org/data/2.5/onecall", {
-                    "APPID": OWM_KEY,
-                    "lat":   32.7767,
-                    "lon":  -96.78,
-                    "units": "imperial"
-            }).done(function(data) {
-                console.log(data);
-
-                var dailyDate = {};
-
-                let htmlCard = "";
 
 
-                for(var x = 0; x < 5; x++) {
-                   dailyDate = (data.daily[x].dt) * 1000;
-                   var dates = new Date((dailyDate));
-                   var extractDate = dates.toDateString();
+<!--    MAPBOX API-->
+    <div id='map' style='width: 800px; height: 600px;'></div>
+<!--    <div id='map_geo' class='map'> </div>-->
 
-                   var maxTemp = data.daily[x].temp.max;
-                        maxTemp = Math.round(maxTemp);
 
-                   var minTemp = data.daily[x].temp.min;
-                        minTemp = Math.round(minTemp);
+<!--    WEATHER_MAP JS FILE needs to go below MAPBOX API html text?-->
+<script src="js/weather_map.js"></script>
 
-                   var iconUrl = "http://openweathermap.org/img/wn/"+data.daily[x].weather[0].icon+"@2x.png";
-                   var description1 = data.daily[x].weather[0].description;
-                   var humidity1 = data.daily[x].humidity;
 
-                   var wind1 = data.daily[x].wind_speed;
-                        wind1 = Math.round(wind1);
 
-                   var pressure1 = data.daily[x].pressure;
 
-                    $("#weatherDays").empty();
 
-                    htmlCard +=  "<div class=\"card\" style=\"width: 18rem;\">" +
-                                    "<div class=\"card-header\">"+extractDate+"</div>\n" +
-                                        "<ul class=\"list-group list-group-flush\"> \n" +
-                                            "<li class=\"list-group-item\">"+maxTemp+"&#8457;"+" / "+minTemp+"&#8457;"+"<img src='"+iconUrl+"'>"+"</li>\n" +
-                                            // "<li class=\"list-group-item\">"+minTemp+"&#8457;"+"</li>\n" +
-                                            // "<img src='"+iconUrl+"'>" +
-                                            "<li class=\"list-group-item\">Description: "+description1+"</li>\n" +
-                                            "<li class=\"list-group-item\">Humidity: "+humidity1+" %"+"</li>\n" +
-                                            "<li class=\"list-group-item\">Wind: "+wind1+" mph"+"</li>\n" +
-                                            "<li class=\"list-group-item\">Pressure: "+pressure1+" inHG"+"</li>\n" +
-                                        "</ul>" +
-                                    "</div>";
 
-                    $("#weatherDays").append(htmlCard);
-                }
-            }).fail(function(errors){
-                console.error(errors);
-            });
-        })();
-    </script>
+
+
 </body>
 </html>
