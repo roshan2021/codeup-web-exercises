@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Weather Map API Project</title>
 
-<!--    MAPBOX API-->
+    <!--    MAPBOX API-->
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
@@ -23,69 +23,53 @@
 
 <body>
 
-<style type="text/css">
-    #info {
-        display: block;
-        position: relative;
-        margin: 0px auto;
-        width: 50%;
-        padding: 10px;
-        border: none;
-        border-radius: 3px;
-        font-size: 12px;
-        text-align: center;
-        color: #222;
-        background: #fff;
-    }
-</style>
-
 <!--    BOOTSTRAP 4.4.1-->
-    <main class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
-            <a class="navbar-brand text-white" href="#">Weather App</a>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link text-white" href="#"><i class="fas fa-user"></i>Current City:  Dallas </a>
-                            </li>
-                        </ul>
-                </div>
-        </nav>
-        <br>
-
-
-        <form class="form-inline">
-            <div class="form-group mb-2">
-                <label for="place" class="sr-only">Place</label>
-                <input type="text" readonly class="form-control-plaintext text-right"  id="place" value="Location">
-            </div>
-            <div class="form-group mx-sm-3 mb-2">
-                <label for="place2" class="sr-only">Place</label>
-                <input type="search" class="form-control" id="place2" placeholder="search">
-            </div>
-            <button type="submit" class="btn btn-primary mb-2">Find</button>
-        </form>
-        <br>
-
-<!--        htmlCard generated-->
-        <div id="weatherDays" class="card-deck"></div>
-    </main>
+<main class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
+        <a class="navbar-brand text-white" href="#">Weather App</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="#"><i class="fas fa-user"></i>Current City:  Dallas </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <br>
 
+
+    <form class="form-inline">
+        <div class="form-group mb-2">
+            <label for="place" class="sr-only">Place</label>
+            <input type="text" readonly class="form-control-plaintext text-right"  id="place" value="Location">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="place2" class="sr-only">Place</label>
+            <input type="search" class="form-control" id="place2" placeholder="search">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Find</button>
+    </form>
+    <br>
+
+    <!--        htmlCard generated-->
+    <div id="weatherDays" class="card-deck"></div>
+</main>
+<br>
+
 <!--    BOOTSTRAP-->
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
 <!--KEYS.JS File needs to go above MAPBOX API html code, do not duplicate keys.js file below -->
-    <script src="js/keys.js"></script>
+<script src="js/keys.js"></script>
 
 
 
@@ -101,15 +85,92 @@
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 <!--    MAPBOX API-->
-    <div id='map' style='width: 800px; height: 600px;'></div>
-    <pre id="info"></pre>
+<div id='map' style='width: 800px; height: 600px;'></div>
+
 
 
 
 
 <!--    WEATHER_MAP JS FILE needs to go below MAPBOX API html text?-->
-<script src="js/weather_map.js"></script>
+<!--<script src="js/weather_map.js"></script>-->
+<script>
+    "use strict";
+    (function() {
 
+
+        $.get("https://api.openweathermap.org/data/2.5/onecall", {
+            "APPID": OWM_KEY,
+            "lat":   32.7767,
+            "lon":  -96.78,
+            "units": "imperial"
+        }).done(function(data) {
+            console.log(data);
+
+            var dailyDate = {};
+
+            let htmlCard = "";
+
+
+            for(var x = 0; x < 5; x++) {
+                dailyDate = (data.daily[x].dt) * 1000;
+                var dates = new Date((dailyDate));
+                var extractDate = dates.toDateString();
+
+                var maxTemp = data.daily[x].temp.max;
+                maxTemp = Math.round(maxTemp);
+
+                var minTemp = data.daily[x].temp.min;
+                minTemp = Math.round(minTemp);
+
+                var iconUrl = "http://openweathermap.org/img/wn/"+data.daily[x].weather[0].icon+"@2x.png";
+                var description1 = data.daily[x].weather[0].description;
+                var humidity1 = data.daily[x].humidity;
+
+                var wind1 = data.daily[x].wind_speed;
+                wind1 = Math.round(wind1);
+
+                var pressure1 = data.daily[x].pressure;
+
+                var headerLocation = "";
+
+
+                $("#weatherDays").empty();
+
+
+                htmlCard +=  "<div class=\"card border-dark text-center\" style=\"width: 18rem;\">" +
+                    "<div class=\"card-header bg-secondary text-white text-center\">"+extractDate+"</div>\n" +
+                    "<ul class=\"list-group list-group-flush\"> \n" +
+                    "<li class=\"list-group-item text-center font-weight-bold text-primary\">"+maxTemp+"&#8457;"+" / "+minTemp+"&#8457;"+"<img src='"+iconUrl+"'>"+"</li>\n" +
+                    // "<li class=\"list-group-item\">"+minTemp+"&#8457;"+"</li>\n" +
+                    // "<img src='"+iconUrl+"'>" +
+                    "<li class=\"list-group-item bg-light\">Description: "+description1+"</li>\n" +
+                    "<li class=\"list-group-item \">Humidity: "+humidity1+" %"+"</li>\n" +
+                    "<li class=\"list-group-item bg-light\">Wind: "+wind1+" mph"+"</li>\n" +
+                    "<li class=\"list-group-item \">Pressure: "+pressure1+" inHG"+"</li>\n" +
+                    "</ul>" +
+                    "</div>";
+
+                $("#weatherDays").append(htmlCard);
+            }
+        }).fail(function(errors){
+            console.error(errors);
+        });
+
+
+
+    })();
+
+    // MAPBOX API
+    mapboxgl.accessToken = weatherMapboxToken;
+
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-96.78, 32.7767], // starting position
+        zoom: 9 // starting zoom
+    });
+
+</script>
 
 
 </body>
