@@ -1,3 +1,7 @@
 .idea
 *.iml
 js/keys.js
+
+.apex
+practiceTest.html
+js/practiceTest.js

@@ -57,7 +57,7 @@ var popupHGSupply = new mapboxgl.Popup()
                 address: '2008 Greenville Ave, Dallas, TX 75206',
                 genre: 'Amercian'
             }
-        ]
+        ];
 
         restaurants.forEach(function(arestaurant, index){
             console.log("Restaurant name: " + arestaurant.name);
